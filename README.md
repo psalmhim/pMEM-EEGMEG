@@ -121,7 +121,6 @@ export PMEM_SEDATION_DATA=/path/to/chennu  # default: ./data/Sedation-RestingSta
              from continuous neuroimaging observations},
   author  = {Jeong, Seok-Oh and Kim, Euisun and Kang, Jiyoung and
              Eo, Jinseok and Lee, Dongmyeong and Park, Hae-Jeong},
-  journal = {NeuroImage},
   year    = {2026},
   note    = {Under review}
 }
