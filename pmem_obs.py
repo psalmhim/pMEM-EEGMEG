@@ -401,8 +401,8 @@ class PMEMObsSimple:
             off_cov = float((S.sum() - np.trace(S)) / (self.N * (self.N - 1)))
             sigma2_new = diag_var
             rho_new = float(np.clip(off_cov / (sigma2_new + 1e-9), -0.49, 0.95))
-            self.sigma2 = sigma2_new
-            self.rho = rho_new
+            self.sigma2 = 0.7 * self.sigma2 + 0.3 * sigma2_new
+            self.rho = 0.7 * self.rho + 0.3 * rho_new
             self.P = compound_symmetry_precision(self.N, self.sigma2, self.rho)
             self.P_diag = np.diag(self.P)
 
