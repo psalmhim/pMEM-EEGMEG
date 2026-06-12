@@ -101,14 +101,41 @@ h, J, beta0, beta1, m = lf_model.fit(verbose=True)
 
 ## `paths.py` — path configuration
 
-Output directories are set via environment variables:
+The full repository uses this folder layout:
+
+```
+mempy/
+├── pmem_obs.py          # core model
+├── pmem_leadfield.py    # leadfield model
+├── __init__.py
+├── example.py
+├── scripts/             # figure generation and analysis scripts
+│   ├── paths.py
+│   ├── nature_style.py
+│   ├── generate_fig1_fig2.py
+│   ├── simulation_*.py
+│   ├── physionet_analysis.py
+│   ├── sedation_*.py
+│   └── mne_leadfield_*.py
+├── data/                # leadfield matrices and atlas files (input)
+│   ├── leadfield_dmn6_64ch.npy
+│   ├── leadfield_dmn6_egi91ch.npy
+│   ├── leadfield_dmn6_mag102ch.npy
+│   ├── leadfield_dmn6_physionet64ch.npy
+│   └── dmn6_geodesic_centroids.npz
+└── results/             # all outputs (auto-created on first run)
+    ├── figures/         # output PNG figures
+    └── cache/           # cached simulation results (.npy / .npz)
+```
+
+All paths are controlled by environment variables — no code edits needed:
 
 ```bash
-export PMEM_FIGDIR=/path/to/figures        # default: ./figures
-export PMEM_CACHEDIR=/path/to/cache        # default: ./cache
-export PMEM_DATADIR=/path/to/data          # default: ./data
+export PMEM_FIGDIR=/path/to/figures        # default: results/figures
+export PMEM_CACHEDIR=/path/to/cache        # default: results/cache
+export PMEM_DATADIR=/path/to/data          # default: data/
 export MNE_DATA=/path/to/mne_data          # default: ~/mne_data
-export PMEM_SEDATION_DATA=/path/to/chennu  # default: ./data/Sedation-RestingState
+export PMEM_SEDATION_DATA=/path/to/chennu  # default: data/Sedation-RestingState
 ```
 
 ---
