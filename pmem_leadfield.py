@@ -368,8 +368,8 @@ class pMEM_Leadfield_v2:
             off_cov  = float((S.sum() - np.trace(S)) / (self.M * (self.M - 1)))
             sigma2_new = diag_var
             rho_new    = float(np.clip(off_cov / (sigma2_new + 1e-9), -0.3, 0.95))
-            self.sigma2 = 0.5 * self.sigma2 + 0.5 * sigma2_new
-            self.rho    = 0.5 * self.rho    + 0.5 * rho_new
+            self.sigma2 = sigma2_new
+            self.rho    = rho_new
             self._update_P()
 
     # --------------------------------------------------------
