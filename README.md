@@ -144,11 +144,18 @@ export PMEM_SEDATION_DATA=/path/to/chennu  # default: data/Sedation-RestingState
 
 ```bibtex
 @article{jeong2026mempy,
-  title   = {A generative framework for estimating brain energy landscapes
-             from continuous neuroimaging observations},
-  author  = {Jeong, Seok-Oh and Kim, Euisun and Kang, Jiyoung and
-             Eo, Jinseok and Lee, Dongmyeong and Park, Hae-Jeong},
-  year    = {2026},
-  note    = {Under review}
+    author = {Jeong, Seok-Oh and Kim, Euisun and Kang, Jiyoung and Eo, Jinseok and Lee, Dongmyeong and Park, Hae-Jeong},
+    title = {A generative framework for estimating brain energy landscapes from continuous neuroimaging observations},
+    journal = {Imaging Neuroscience},
+    volume = {4},
+    pages = {IMAG.a.1415},
+    year = {2026},
+    month = {10},
+    abstract = {Pairwise maximum entropy models (pMEMs) are gaining increasing attention as a principled way to study nonlinear brain-state transitions. By representing each brain region as a binary active/inactive state and estimating the least-biased probability distribution over all such network configurations, pMEMs reconstruct an energy landscape in which local minima correspond to stable or metastable brain states and transitions reflect movement across attractor basins. However, neuroimaging recordings are continuous and spatially mixed, forcing conventional pMEM analyses to demean and hard-threshold each channel. This ad hoc binarization discards amplitude information and can conflate spatially correlated noise or source mixing with genuine neural coupling. We introduce a hierarchical generative pMEM that links latent binary network states to continuous observations. Node-specific baseline and gain parameters model amplitude modulation, compound-symmetry noise captures shared residual covariance, and, for electroencephalography/magnetoencephalography (EEG/MEG), the electromagnetic leadfield is included as a generative forward model rather than a preprocessing inverse. Model parameters and latent states are jointly estimated using exact posterior enumeration for the small networks analyzed here and a mean-field extension for larger networks. Controlled simulations demonstrated two complementary advantages of the proposed framework. Residual-covariance modeling improved recovery of pMEM fields, couplings, and latent states by accounting for shared fluctuations, with the clearest gains when residual spatial correlation was sufficiently strong. The generative leadfield model further improved sensor-space inference by avoiding inverse-first source reconstruction, including settings in which covariance modeling alone offered limited gains. Resting-state EEG validation showed higher residual correlation during eyes-closed than eyes-open rest, consistent with elevated and spatially coherent alpha activity. Applied further to propofol sedation EEG (alpha-band amplitude envelopes, 8–13 Hz), the fitted 6-node default mode network (DMN) model showed pipeline-dependent condition effects in residual spatial correlation and basin entropy, not apparent under the conventional demean-based pMEM.},
+    issn = {2837-6056},
+    doi = {10.1162/IMAG.a.1415},
+    url = {https://doi.org/10.1162/IMAG.a.1415},
+    eprint = {https://direct.mit.edu/imag/article-pdf/doi/10.1162/IMAG.a.1415/2631403/imag.a.1415.pdf},
 }
+
 ```
